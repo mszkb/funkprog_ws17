@@ -8,7 +8,7 @@ type Spiel              = (GesamtKugelZahl, GezogeneKugelZahl)
 type Gluecksspiel       = (Spiel, Spiel)
 
 anzahlWettKombis :: Gluecksspiel -> Nat0
-anzahlWettKombis (a,b) = binomK a + binomK b
+anzahlWettKombis (a,b) = binomK a * binomK b
 
 binomK :: Spiel -> Nat0
 binomK (a,b) = div (fac a) (fac b * fac(a - b))
