@@ -11,7 +11,9 @@ anzahlWettKombis :: Gluecksspiel -> Nat0
 anzahlWettKombis (a,b) = binomK a * binomK b
 
 binomK :: Spiel -> Nat0
-binomK (a,b) = div (fac a) (fac b * fac(a - b))
+binomK (n,k)
+ | (n >= k) && n >= 0 && k >= 0 = div (fac n) (fac k * fac(n - k))
+ | otherwise = 0
 
 fac :: Nat1 -> Nat0
 fac n = if n == 0 then 1 else n * fac(n-1)
