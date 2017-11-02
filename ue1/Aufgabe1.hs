@@ -37,7 +37,7 @@ fib' n = nthFib n fibList
 
 -- Searches for the nth fib number
 nthFib :: Nat0 -> [Nat0] -> Nat0
-nthFib = indexInList 0
+nthFib a n@(x:xs) = indexInList 0 a n
 
 
 -- Searches through the list and returns an index of the wanted element
@@ -46,7 +46,7 @@ nthFib = indexInList 0
 indexInList :: Nat0 -> Nat0 -> [Nat0] -> Nat0
 indexInList i a (x:xs)
  | a == x = i
- | x < a = indexInList a (i+1) xs
+ | x < a = indexInList (i+1) a xs
  | otherwise = a
 
 
