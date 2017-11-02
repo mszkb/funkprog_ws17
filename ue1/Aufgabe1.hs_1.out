@@ -1,0 +1,42 @@
+Punkte pro Testfall: 12; 0; Maximum: 35 
+
+Testfall: {-1.1-} [anzahlWettKombis c|c<-[((45,6),(1,1)),((50,5),(12,2))]] == [8145060,139838160]; Testfall OK 
+Testfall: {-1.2-} [anzahlWettKombis ((i,j),(1,1))|i<-[44..46],j<-[4..7]] == [135751,1086008,7059052,38320568,148995,1221759,8145060,45379620,163185,1370754,9366819,53524680]; Testfall OK 
+Testfall: {-1.3-} [anzahlWettKombis ((i,j),(12,k))|i<-[49,51],j<-[4,6],k<-[2,3]] == [13983816,46612720,922931856,3076439520,16493400,54978000,1188624360,3962081200]; Testfall OK 
+
+Testfaelle OK: 3; Testfaelle FALSCH: 0
+Punkte : 35
+
+Punkte pro Testfall: 9; 0; Maximum: 36 
+
+Testfall: {-2.1-}[fib n|n<-[0..9]] == [0,1,1,2,3,5,8,13,21,34]; Testfall OK 
+Testfall: {-2.2-}[m|m<-[0..90],m/=fib' m] ; Testfall FALSCH 
+Erwartet: {-2.2-}[m|m<-[0..90],m/=fib' m] == [2,3,8,13,21,34,55,89] 
+Ausgabe:  {-2.2-}[m|m<-[0..90],m/=fib' m] == []   
+Testfall: {-2.3-}take 5[n|n<-[6..20],(fib'.fib)n/=n] ; Testfall FALSCH 
+Erwartet: {-2.3-}take 5[n|n<-[6..20],(fib'.fib)n/=n] == [] 
+Ausgabe:  {-2.3-}take 5[n|n<-[6..20],(fib'.fib)n/=n] == [6,7,8,9,10]   
+Testfall: {-2.4-}fib' 90 == 90; Testfall OK 
+
+Testfaelle OK: 2; Testfaelle FALSCH: 2
+Punkte : 18
+
+Punkte pro Testfall: 9; 0; Maximum: 19 
+
+Testfall: {-3.1-}fibs 19 == [0,1,1,2,3,5,8,13,21,34,55,89,144,233,377,610,987,1597,2584,4181]; Testfall OK 
+Testfall: {-3.2-}let n=19;f=fibs n;in tail(zipWith(-)(tail f)f) == fibs(n-2); Testfall OK 
+Testfall: {-3.3-}let n=29;f=fibs n;in tail(zipWith(-)(tail f)f) == fibs(n-2); Testfall OK 
+
+Testfaelle OK: 3; Testfaelle FALSCH: 0
+Punkte : 19
+
+Punkte pro Testfall: 5; 0; Maximum: 10 
+
+Testfall: {-4.1-}verflechten [] [2] == [2]; Testfall OK 
+Testfall: {-4.2-}let n=100;in verflechten [1,3..n] [2,4..n] == [1..n]; Testfall OK 
+
+Testfaelle OK: 2; Testfaelle FALSCH: 0
+Punkte : 10
+
+Punkte gesamt: 82
+
